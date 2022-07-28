@@ -3,6 +3,7 @@ package dev.rolandsarosy.newssample.di
 import com.squareup.moshi.Moshi
 import dev.rolandsarosy.newssample.BuildConfig
 import dev.rolandsarosy.newssample.network.Endpoint
+import dev.rolandsarosy.newssample.network.responseadapter.NetworkResponseAdapterFactory
 import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
@@ -45,6 +46,7 @@ fun createOkHttpBuilder(): OkHttpClient.Builder {
 
 fun createRetrofit(moshi: Moshi, okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
     .baseUrl(BuildConfig.BASE_URL)
+    .addCallAdapterFactory(NetworkResponseAdapterFactory())
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .client(okHttpClient)
     .build()
