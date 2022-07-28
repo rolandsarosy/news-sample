@@ -4,7 +4,7 @@
     package="dev.rolandsarosy.newssample">
 
     <application
-        android:name=".NewsSampleApplication"
+        android:name=".di.NewsSampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".di.MainActivity"
             android:exported="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"

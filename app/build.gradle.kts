@@ -45,6 +45,9 @@ android {
 
     namespace = "dev.rolandsarosy.newssample"
     flavorDimensions += "environment"
+
+    // Currently both product flavors are the same, but this showcases how they can be used to differentiate the "two applications", in a way
+    // That they're acting as two different apps with different icons, names, instances on a phone and API keys.
     productFlavors {
         create("production") {
             dimension = "environment"
@@ -53,6 +56,7 @@ android {
 
             resValue("string", "app_name", "News Sample")
             buildConfigField("String", "BASE_URL", "\"https://content.guardianapis.com/\"")
+            buildConfigField("String", "API_KEY", "\"c6a26cae-4b16-4c1d-9918-d9b068beec88\"")
         }
 
         create("staging") {
@@ -62,6 +66,7 @@ android {
 
             resValue("string", "app_name", "News Sample Staging")
             buildConfigField("String", "BASE_URL", "\"https://content.guardianapis.com/\"")
+            buildConfigField("String", "API_KEY", "\"c6a26cae-4b16-4c1d-9918-d9b068beec88\"")
         }
     }
 }

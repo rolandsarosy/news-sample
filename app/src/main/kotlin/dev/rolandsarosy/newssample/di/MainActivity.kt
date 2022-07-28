@@ -1,4 +1,4 @@
-package dev.rolandsarosy.newssample
+package dev.rolandsarosy.newssample.di
 
 import androidx.appcompat.app.AppCompatActivity
 
