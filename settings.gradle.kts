@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "News Sample"
-include ':app'
+include(":app")
