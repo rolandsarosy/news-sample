@@ -1,6 +1,10 @@
+import com.android.build.gradle.internal.tasks.factory.dependsOn
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
     id("com.android.application")
     id("com.google.devtools.ksp").version("1.6.21-1.0.5")
+    id("io.gitlab.arturbosch.detekt").version("1.20.0")
 
     kotlin("android")
     kotlin("kapt")
@@ -76,4 +80,31 @@ dependencies {
     // Android material components
     val materialVersion by extra("1.6.1")
     implementation("com.google.android.material:material:$materialVersion")
+}
+
+tasks.preBuild.dependsOn(tasks.detekt)
+tasks.check.dependsOn(tasks.detekt)
+tasks.withType<Detekt>().configureEach {
+    reports {
+        html.required.set(true)
+        html.outputLocation.set(file("build/reports/detekt-report.html"))
+        txt.required.set(false)
+        xml.required.set(false)
+        sarif.required.set(false)
+    }
+}
+
+detekt {
+    toolVersion = "1.20.0"
+    source = files("src/main/kotlin", "src/test/kotlin")
+    parallel = true
+    config = files("detekt-config.yml")
+    buildUponDefaultConfig = false
+    allRules = false
+    disableDefaultRuleSets = false
+    debug = false
+    ignoreFailures = false
+    ignoredBuildTypes = listOf()
+    ignoredFlavors = listOf()
+    ignoredVariants = listOf()
 }
