@@ -83,7 +83,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navComponentsVersion")
 
     // Lifecycle extensions
-    val lifecycleExtensionsVersion by extra("2.5.1")
+    val lifecycleExtensionsVersion by extra("2.2.0")
     implementation("androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleExtensionsVersion")
 
