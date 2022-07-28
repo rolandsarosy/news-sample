@@ -77,9 +77,61 @@ dependencies {
     val ktxCoreVersion by extra("1.8.0")
     implementation("androidx.core:core-ktx:$ktxCoreVersion")
 
+    // Navigation components
+    val navComponentsVersion by extra("2.5.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navComponentsVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navComponentsVersion")
+
+    // Lifecycle extensions
+    val lifecycleExtensionsVersion by extra("2.5.1")
+    implementation("androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleExtensionsVersion")
+
+    // Livedata
+    val liveDataVersion by extra("2.5.1")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$liveDataVersion")
+
+    // Koin dependency injection
+    val koinVersion by extra("3.2.0")
+    implementation("io.insert-koin:koin-android:$koinVersion")
+
+    // ConstraintLayout
+    val constraintLayoutVersion by extra("2.1.4")
+    implementation("androidx.constraintlayout:constraintlayout:$constraintLayoutVersion")
+
     // Android material components
     val materialVersion by extra("1.6.1")
     implementation("com.google.android.material:material:$materialVersion")
+
+    // RecyclerView
+    val recyclerViewVersion by extra("1.2.1")
+    implementation("androidx.recyclerview:recyclerview:$recyclerViewVersion")
+
+    // Retrofit
+    val retrofitVersion by extra("2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
+
+    // Okhttp 3
+    val okhttpLoggingVersion by extra("5.0.0-alpha.7")
+    implementation("com.squareup.okhttp3:logging-interceptor:$okhttpLoggingVersion")
+
+    // Moshi
+    val moshiVersion by extra("1.13.0")
+    implementation("com.squareup.moshi:moshi:$moshiVersion")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
+
+    // Coroutines
+    val coroutinesVersion by extra("1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+
+    // Timber logger
+    val timberVersion by extra("5.0.1")
+    implementation("com.jakewharton.timber:timber:$timberVersion")
+
+    // Coil image loader
+    val coilVersion by extra("2.1.0")
+    implementation("io.coil-kt:coil:$coilVersion")
 }
 
 tasks.preBuild.dependsOn(tasks.detekt)
